@@ -18,7 +18,7 @@
 
     <Grid Background="#393E46">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="175"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -27,7 +27,7 @@
         </Grid.RowDefinitions>
 
         <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Fill="#222831" />
-        <TextBlock Text="Overlayer" FontSize="15" VerticalAlignment="Center" Padding="10, 0 , 0, 0" FontWeight="Heavy" Foreground="#00ADB5" FontFamily="/Fonts/#Poppins"/>
+        <TextBlock Text="Overlayer" FontSize="15" VerticalAlignment="Center" Padding="10, 0 , 0, 0" FontWeight="Medium" Foreground="#00ADB5" FontFamily="/Fonts/#Poppins"/>
         <StackPanel Grid.Row="0" 
                     Grid.Column="1" 
                     HorizontalAlignment="Right"
@@ -39,10 +39,9 @@
 
         <Grid Grid.Column="0" Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
@@ -50,9 +49,10 @@
             <Rectangle Grid.Row="1" Fill="#222831" />
             <Rectangle Grid.Row="2" Fill="#222831" />
             <Rectangle Grid.Row="3" Fill="#222831" />
-            <Rectangle Grid.Row="4" Fill="#222831" />
 
-            <TextBlock>Test</TextBlock>
+            <TextBlock Foreground="#EEEEEE" VerticalAlignment="Center" FontSize="20" FontFamily="/Fonts/#Poppins" FontWeight="DemiBold" Padding="15,0,0,0" Grid.Row="0">Selection 1</TextBlock>
+            <TextBlock Foreground="#EEEEEE" VerticalAlignment="Center" FontSize="20" FontFamily="/Fonts/#Poppins" FontWeight="DemiBold" Padding="15,0,0,0" Grid.Row="1">Selection 2</TextBlock>
+            <TextBlock Foreground="#EEEEEE" VerticalAlignment="Center" FontSize="20" FontFamily="/Fonts/#Poppins" FontWeight="DemiBold" Padding="15,0,0,0" Grid.Row="2">Output</TextBlock>
         </Grid>
         
         <Image x:Name="screenshotImgOne" Grid.Row="1" Grid.Column="1" Opacity="0.5"></Image>
