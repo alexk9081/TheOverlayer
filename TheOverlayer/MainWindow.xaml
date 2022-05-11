@@ -9,14 +9,17 @@
         Height="450" Width="800"
         MinHeight="400" MinWidth="800"
         MouseDown="Window_MouseDown">
+    
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" UseAeroCaptionButtons="False" ResizeBorderThickness="7"/>
     </WindowChrome.WindowChrome>
+    
     <Window.CommandBindings>
         <CommandBinding CanExecute="Can_Execute" Command="{x:Static SystemCommands.CloseWindowCommand}"  Executed="Window_Close" />
         <CommandBinding CanExecute="Can_Execute" Command="{x:Static SystemCommands.MaximizeWindowCommand}" Executed="Window_Maximize" />
         <CommandBinding CanExecute="Can_Execute" Command="{x:Static SystemCommands.MinimizeWindowCommand}" Executed="Window_Hide" />
     </Window.CommandBindings>
+    
     <Window.Resources>
         <DataTemplate x:Name="outputViewTemplate" DataType="{x:Type viewmodels:OutputViewModel}">
             <views:OutputView DataContext="{Binding}"/>
@@ -27,6 +30,28 @@
         <DataTemplate x:Name="secondSelectionViewTemplate" DataType="{x:Type viewmodels:SecondSelectionViewModel}">
             <views:SecondSelectionView DataContext="{Binding}"/>
         </DataTemplate>
+
+        <Style TargetType="Button" x:Key="MenuButton" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+            <Setter Property="Grid.Column" Value="0" />
+            <Setter Property="Background" Value="#222831" />
+            <Setter Property="Foreground" Value="#EEEEEE" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="Padding" Value="15, 0 ,0, 0" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="/Fonts/#Poppins" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="50" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="WindowButton" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+            <Setter Property="Background" Value="#222831" />
+            <Setter Property="Foreground" Value="#EEEEEE" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Width" Value="30" />
+            <Setter Property="Height" Value="30" />
+        </Style>
     </Window.Resources>
 
     
@@ -41,22 +66,13 @@
         </Grid.RowDefinitions>
 
         <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Fill="#222831" />
+        
         <TextBlock Text="Overlayer" FontSize="15" VerticalAlignment="Center" Padding="10, 0 , 0, 0" FontWeight="Medium" Foreground="#00ADB5" FontFamily="/Fonts/#Poppins"/>
-        <StackPanel Grid.Row="0" Grid.Column="1"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Right">
-            <Button Background="#222831" Foreground="#EEEEEE" 
-                    BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  
-                    Width="30" Height="30" 
-                    Command="{x:Static SystemCommands.MaximizeWindowCommand}" Content="❐" />
-            <Button Background="#222831" Foreground="#EEEEEE" 
-                    BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  
-                    Width="30" Height="30" 
-                    Command="{x:Static SystemCommands.MinimizeWindowCommand}" Content="_" />
-            <Button Background="#222831" Foreground="#EEEEEE" 
-                    BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  
-                    Width="30" Height="30" 
-                    Command="{x:Static SystemCommands.CloseWindowCommand}" Content="✖" />
+        
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Style="{StaticResource WindowButton}" Command="{x:Static SystemCommands.MaximizeWindowCommand}" Content="❐" />
+            <Button Style="{StaticResource WindowButton}" Command="{x:Static SystemCommands.MinimizeWindowCommand}" Content="_" />
+            <Button Style="{StaticResource WindowButton}" Command="{x:Static SystemCommands.CloseWindowCommand}" Content="✖" />
         </StackPanel>
 
         <Grid Grid.Column="0" Grid.Row="1">
@@ -67,28 +83,16 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="0" 
-                    Background="#222831" Foreground="#EEEEEE" 
-                    HorizontalContentAlignment="Left" Padding="15, 0 ,0, 0" 
-                    FontSize="15" FontFamily="/Fonts/#Poppins" FontWeight="DemiBold" 
-                    BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                    Width="150" Height="50"
+            <Button Style="{StaticResource MenuButton}"
+                    Grid.Row="0" 
                     Click="FirstSelection_Clicked"
                     Content="⬒ Selection 1"/>
-            <Button Grid.Row="1" 
-                    Background="#222831" Foreground="#EEEEEE" 
-                    HorizontalContentAlignment="Left" Padding="15, 0 ,0, 0" 
-                    FontSize="15" FontFamily="/Fonts/#Poppins" FontWeight="DemiBold" 
-                    BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                    Width="150" Height="50"
+            <Button Style="{StaticResource MenuButton}"
+                    Grid.Row="1" 
                     Click="SecondSelection_Clicked"
                     Content="⬓ Selection 2"/>
-            <Button Grid.Row="2" 
-                    Background="#222831" Foreground="#EEEEEE" 
-                    HorizontalContentAlignment="Left" Padding="15, 0 ,0, 0" 
-                    FontSize="15" FontFamily="/Fonts/#Poppins" FontWeight="DemiBold"  
-                    BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                    Width="150" Height="50"
+            <Button Style="{StaticResource MenuButton}"
+                    Grid.Row="2" 
                     Click="Output_Clicked"
                     Content="■ Output"/>
             <Rectangle Grid.Row="3" Fill="#222831" />

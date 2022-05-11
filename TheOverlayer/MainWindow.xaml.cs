@@ -14,11 +14,13 @@ namespace WPFTestAppTwo
             DataContext = new FirstSelectionViewModel();
             InitializeComponent();
         }
+
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
+
         private void Can_Execute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
@@ -44,10 +46,6 @@ namespace WPFTestAppTwo
             SystemCommands.MinimizeWindow(this);
         }
 
-        private void Output_Clicked(object sender, RoutedEventArgs e)
-        {
-            DataContext = new OutputViewModel();
-        }
         private void FirstSelection_Clicked(object sender, RoutedEventArgs e)
         {
             DataContext = new FirstSelectionViewModel();
@@ -56,7 +54,6 @@ namespace WPFTestAppTwo
                 TheOverlayer.Views.OutputView.End_Timer();
             }
         }
-
         private void SecondSelection_Clicked(object sender, RoutedEventArgs e)
         {
             DataContext = new SecondSelectionViewModel();
@@ -64,6 +61,10 @@ namespace WPFTestAppTwo
             {
                 TheOverlayer.Views.OutputView.End_Timer();
             }
+        }
+        private void Output_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new OutputViewModel();
         }
     }
 }
