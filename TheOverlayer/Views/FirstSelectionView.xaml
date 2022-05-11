@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:TheOverlayer.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -11,22 +10,33 @@
             <Setter Property="Background" Value="#222831"/>
             <Setter Property="Foreground" Value="#EEEEEE"/>
             <Setter Property="BorderBrush" Value="#00ADB5"/>
-            
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontFamily" Value="/Fonts/#Poppins"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
-            
-            <Setter Property="Width" Value="100"/>
-            <Setter Property="Height" Value="100"/>
-            <Setter Property="Margin" Value="50"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="150"/>
+            <Setter Property="Margin" Value="40, 0"/>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#EEEEEE"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="/Fonts/#Poppins" />
         </Style>
     </UserControl.Resources>
     
     <Grid Background="#393E46">
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button Content="Test"/>
-            <Button Content="Test"/>
-            <Button Content="Test"/>
+            <StackPanel VerticalAlignment="Center">
+                <Button></Button>
+                <TextBlock>Live Screen</TextBlock>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center">
+                <Button></Button>
+                <TextBlock>Picture</TextBlock>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>
