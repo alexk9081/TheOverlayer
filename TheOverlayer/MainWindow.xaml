@@ -44,7 +44,6 @@
             <Setter Property="Width" Value="150" />
             <Setter Property="Height" Value="50" />
         </Style>
-
         <Style TargetType="Button" x:Key="WindowButton" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
             <Setter Property="Background" Value="#222831" />
             <Setter Property="Foreground" Value="#EEEEEE" />
@@ -64,17 +63,17 @@
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-
+        
+        <!--Top Bar-->
         <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Fill="#222831" />
-        
         <TextBlock Text="Overlayer" FontSize="15" VerticalAlignment="Center" Padding="10, 0 , 0, 0" FontWeight="Medium" Foreground="#00ADB5" FontFamily="/Fonts/#Poppins"/>
-        
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Style="{StaticResource WindowButton}" Command="{x:Static SystemCommands.MaximizeWindowCommand}" Content="❐" />
             <Button Style="{StaticResource WindowButton}" Command="{x:Static SystemCommands.MinimizeWindowCommand}" Content="_" />
             <Button Style="{StaticResource WindowButton}" Command="{x:Static SystemCommands.CloseWindowCommand}" Content="✖" />
         </StackPanel>
-
+        
+        <!--Side Panel-->
         <Grid Grid.Column="0" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"></RowDefinition>
@@ -97,7 +96,8 @@
                     Content="■ Output"/>
             <Rectangle Grid.Row="3" Fill="#222831" />
         </Grid>
-
+        
+        <!--Main Content-->
         <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding}"/>
     </Grid>
 </Window>

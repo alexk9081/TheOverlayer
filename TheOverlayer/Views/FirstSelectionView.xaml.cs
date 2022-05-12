@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TheOverlayer.ViewModels;
 
 namespace TheOverlayer.Views
 {
@@ -23,6 +24,10 @@ namespace TheOverlayer.Views
         public FirstSelectionView()
         {
             InitializeComponent();
+        }
+        private void LiveScreen_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ScreenSelectionViewModel();
         }
     }
 }

@@ -13,6 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        
         <Image x:Name="screenshotImgOne" Grid.Row="0" Grid.Column="0" Opacity="0.5"></Image>
         <Image x:Name="screenshotImgTwo" Grid.Row="0" Grid.Column="0" Opacity="0.5"></Image>
     </Grid>
