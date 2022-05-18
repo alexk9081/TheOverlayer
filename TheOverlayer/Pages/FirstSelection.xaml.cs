@@ -12,21 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TheOverlayer;
 
-namespace TheOverlayer.Views
+namespace TheOverlayer.Pages
 {
     /// <summary>
-    /// Interaction logic for FirstSelectionView.xaml
+    /// Interaction logic for FirstSelection.xaml
     /// </summary>
-    public partial class FirstSelectionView : UserControl
+    public partial class FirstSelection : Page
     {
-        public FirstSelectionView()
+        public FirstSelection()
         {
             InitializeComponent();
-        }
-        private void LiveScreen_Clicked(object sender, RoutedEventArgs e)
-        {
         }
     }
 }

@@ -62,9 +62,15 @@ namespace WPFTestAppTwo
                 TheOverlayer.Views.OutputView.End_Timer();
             }
         }
+        private void ScreenSelection_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ScreenSelectionViewModel();
+        }
+
         private void Output_Clicked(object sender, RoutedEventArgs e)
         {
             DataContext = new OutputViewModel();
         }
+
     }
 }

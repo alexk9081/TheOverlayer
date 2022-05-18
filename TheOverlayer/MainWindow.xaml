@@ -30,6 +30,9 @@
         <DataTemplate x:Name="secondSelectionViewTemplate" DataType="{x:Type viewmodels:SecondSelectionViewModel}">
             <views:SecondSelectionView DataContext="{Binding}"/>
         </DataTemplate>
+        <DataTemplate x:Name="screenSelectionViewTemplate" DataType="{x:Type viewmodels:ScreenSelectionViewModel}">
+            <views:ScreenSelectionView DataContext="{Binding}"/>
+        </DataTemplate>
 
         <Style TargetType="Button" x:Key="MenuButton" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
             <Setter Property="Grid.Column" Value="0" />
