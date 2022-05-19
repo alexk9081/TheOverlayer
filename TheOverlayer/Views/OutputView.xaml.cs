@@ -29,11 +29,24 @@ namespace TheOverlayer.Views
         public OutputView()
         {
             InitializeComponent();
+            Set_Top_Layer(true);
+            Set_Bottom_Later(true);
             Init_Timer(30);
         }
 
         private static Timer fpsTimer;
         private static bool hasRun;
+        private static bool topLayerEnabled;
+        private static bool bottomLayerEnabled;
+
+        public static void Set_Top_Layer(bool setting)
+        {
+            topLayerEnabled = setting;
+        }
+        public static void Set_Bottom_Later(bool setting)
+        {
+            bottomLayerEnabled = setting;
+        }
         public void Init_Timer(int desiredFPS)
         {
             hasRun = true;
@@ -53,8 +66,14 @@ namespace TheOverlayer.Views
         }
         private void Repeated_Action(object sender, EventArgs e)
         {
-            screenshotImgOne.Source = Screenshot_Selection(1, 540, 960);
-            screenshotImgTwo.Source = Screenshot_Selection(2, 540, 960);
+            if (topLayerEnabled)
+            {
+                screenshotImgOne.Source = Screenshot_Selection(1, 540, 960);
+            }
+            if (bottomLayerEnabled)
+            {
+                screenshotImgTwo.Source = Screenshot_Selection(2, 540, 960);
+            }
         }
         public BitmapSource Screenshot_Selection(int screen, int Height, int Width)
         {
