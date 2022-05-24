@@ -11,7 +11,7 @@ namespace WPFTestAppTwo
     {
         public MainWindow()
         {
-            DataContext = new FirstSelectionViewModel();
+            DataContext = new PictureSelectionViewModel();
             InitializeComponent();
         }
 
@@ -71,6 +71,5 @@ namespace WPFTestAppTwo
         {
             DataContext = new OutputViewModel();
         }
-
     }
 }

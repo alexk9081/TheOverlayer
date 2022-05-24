@@ -59,6 +59,7 @@
     </ApplicationDefinition>
     <Compile Include="ViewModels\FirstSelectionViewModel.cs" />
     <Compile Include="ViewModels\OutputViewModel.cs" />
+    <Compile Include="ViewModels\PictureSelectionViewModel.cs" />
     <Compile Include="ViewModels\ScreenSelectionViewModel.cs" />
     <Compile Include="ViewModels\SecondSelectionViewModel.cs" />
     <Compile Include="Views\FirstSelectionView.xaml.cs">
@@ -66,6 +67,9 @@
     </Compile>
     <Compile Include="Views\OutputView.xaml.cs">
       <DependentUpon>OutputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PictureSelectionView.xaml.cs">
+      <DependentUpon>PictureSelectionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ScreenSelectionView.xaml.cs">
       <DependentUpon>ScreenSelectionView.xaml</DependentUpon>
@@ -90,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\OutputView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PictureSelectionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
