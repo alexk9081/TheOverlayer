@@ -16,6 +16,6 @@
         </Grid.RowDefinitions>
 
         <Button Grid.Row="0" Content="Get picture" Click="Open_Pic_File_Tku"/>
-        <TextBox Grid.Row="1" Name="txtEditor" />
+        <Image Grid.Row="1" Name="selectedImage"/>
     </Grid>
 </UserControl>

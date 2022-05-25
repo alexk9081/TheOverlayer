@@ -30,10 +30,13 @@ namespace TheOverlayer.Views
         private void Open_Pic_File_Tku(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
+            openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg";
 
             if (openFileDialog.ShowDialog() == true)
-                txtEditor.Text = openFileDialog.FileName;
+            {
+                selectedImage.Source = new BitmapImage(
+                    new Uri(openFileDialog.FileName));
+            }
         }
     }
 }
