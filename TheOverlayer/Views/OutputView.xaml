@@ -12,9 +12,16 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
         
         <Image x:Name="screenshotImgOne" Grid.Row="0" Grid.Column="0" Opacity="0.5"></Image>
         <Image x:Name="screenshotImgTwo" Grid.Row="0" Grid.Column="0" Opacity="0.5"></Image>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Grid.Row="1" MinWidth="50" Name="estFPS" Text="Estimated FPS: NaN" Foreground="White" VerticalAlignment="Center"/>
+            <Button Grid.Row="1" MinWidth="50" Click="Slow_Timer_Speed" Content="Slow down"/>
+            <Button Grid.Row="1" MinWidth="50" Click="Acccelerate_Timer_Speed" Content="Speed up"/>
+        </StackPanel>
     </Grid>
 </UserControl>

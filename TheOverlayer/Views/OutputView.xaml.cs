@@ -29,8 +29,8 @@ namespace TheOverlayer.Views
         public OutputView()
         {
             InitializeComponent();
-            Set_Top_Layer(true);
-            Set_Bottom_Later(true);
+            Enable_Top_Layer(true);
+            Enable_Bottom_Layer(true);
             Init_Timer(30);
         }
 
@@ -39,11 +39,11 @@ namespace TheOverlayer.Views
         private static bool topLayerEnabled;
         private static bool bottomLayerEnabled;
 
-        public static void Set_Top_Layer(bool setting)
+        public static void Enable_Top_Layer(bool setting)
         {
             topLayerEnabled = setting;
         }
-        public static void Set_Bottom_Later(bool setting)
+        public static void Enable_Bottom_Layer(bool setting)
         {
             bottomLayerEnabled = setting;
         }
@@ -53,11 +53,37 @@ namespace TheOverlayer.Views
             fpsTimer = new Timer();
             fpsTimer.Tick += new EventHandler(Repeated_Action);
             fpsTimer.Interval = 1000 / desiredFPS; // in miliseconds
+            estFPS.Text = "Estimated FPS: " + desiredFPS;
             fpsTimer.Start();
         }
         public static bool Timer_Has_Started()
         {
             return hasRun;
+        }
+        private void Slow_Timer_Speed(object sender, RoutedEventArgs e)
+        {
+            if (!Timer_Has_Started())
+            {
+                return;
+            }
+            End_Timer();
+            fpsTimer.Interval = fpsTimer.Interval + (fpsTimer.Interval / 7); // in miliseconds
+            estFPS.Text = "Estimated FPS: " + (1000/ fpsTimer.Interval);
+            hasRun = true;
+            fpsTimer.Start();
+        }
+
+        private void Acccelerate_Timer_Speed(object sender, RoutedEventArgs e)
+        {
+            if (!Timer_Has_Started())
+            {
+                return;
+            }
+            End_Timer();
+            fpsTimer.Interval = fpsTimer.Interval - (fpsTimer.Interval / 9); // in miliseconds
+            estFPS.Text = "Estimated FPS: " + (1000 / fpsTimer.Interval);
+            hasRun = true;
+            fpsTimer.Start();
         }
         public static void End_Timer()
         {
