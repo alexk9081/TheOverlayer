@@ -15,7 +15,14 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Content="Get picture" Click="Open_Pic_File_Tku"/>
-        <Image Grid.Row="1" Name="selectedImage"/>
+        <Button Grid.Row="0" Content="Get picture" Click="Open_Picture"/>
+        <Canvas Grid.Row="1" MouseMove="Canvas_MouseMove"
+        Background="Transparent">
+            <Image Grid.Row="1" Name="selectedImage"/>
+            <Rectangle x:Name="selectionBox"
+                Width="50"
+                Height="50"
+                Fill="White" />
+        </Canvas>
     </Grid>
 </UserControl>

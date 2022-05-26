@@ -27,7 +27,7 @@ namespace TheOverlayer.Views
             InitializeComponent();
         }
 
-        private void Open_Pic_File_Tku(object sender, RoutedEventArgs e)
+        private void Open_Picture(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg";
@@ -37,6 +37,13 @@ namespace TheOverlayer.Views
                 selectedImage.Source = new BitmapImage(
                     new Uri(openFileDialog.FileName));
             }
+        }
+
+        private void Canvas_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            var pos = e.GetPosition((Canvas)sender);
+            Canvas.SetLeft(selectionBox, pos.X - 25);
+            Canvas.SetTop(selectionBox, pos.Y - 25);
         }
     }
 }
